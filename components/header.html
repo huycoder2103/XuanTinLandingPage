@@ -13,12 +13,31 @@
                 </div>
             </div>
         </a>
-        <div class="hidden md:flex space-x-10 items-center font-black text-xs uppercase text-white">
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 items-center font-black text-[10px] uppercase text-white tracking-widest">
             <a href="index.html#about" class="hover:text-orange-500 transition-colors link-home">Về chúng tôi</a>
             <a href="index.html#network" class="hover:text-orange-500 transition-colors link-home">Mạng lưới</a>
             <a href="pages/all-news.html" class="hover:text-orange-500 transition-colors link-news">Tin tức</a>
             <a href="pages/rates.html" class="hover:text-orange-500 transition-colors link-rates">Báo giá</a>
-            <a href="index.html#contact" class="industrial-btn py-3 px-6 link-home">Liên hệ</a>
+            <a href="index.html#contact" class="bg-orange-500 text-white px-5 py-2 rounded-sm hover:bg-white hover:text-blue-900 transition-all link-home">Liên hệ</a>
         </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-white text-2xl">
+            <i class="bi bi-list"></i>
+        </button>
     </div>
+</div>
+
+<!-- Mobile Menu Drawer -->
+<div id="mobile-menu" class="fixed inset-0 bg-blue-900 z-[2000] flex flex-col items-center justify-center space-y-8 transform translate-x-full transition-transform duration-500 md:hidden">
+    <button id="mobile-menu-close" class="absolute top-6 right-6 text-white text-4xl">
+        <i class="bi bi-x"></i>
+    </button>
+    <a href="index.html#about" class="text-2xl font-black text-white uppercase tracking-tighter hover:text-orange-500 link-home">Về chúng tôi</a>
+    <a href="index.html#network" class="text-2xl font-black text-white uppercase tracking-tighter hover:text-orange-500 link-home">Mạng lưới</a>
+    <a href="pages/all-news.html" class="text-2xl font-black text-white uppercase tracking-tighter hover:text-orange-500 link-news">Tin tức</a>
+    <a href="pages/rates.html" class="text-2xl font-black text-white uppercase tracking-tighter hover:text-orange-500 link-rates">Báo giá</a>
+    <a href="index.html#contact" class="text-2xl font-black text-orange-500 uppercase tracking-tighter link-home">Liên hệ ngay</a>
 </div>

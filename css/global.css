@@ -184,6 +184,27 @@ nav.scrolled {
     border-color: #e8af06 !important;
 }
 
+/* Mobile Menu Specifics */
+#mobile-menu {
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+#mobile-menu.translate-x-full {
+    transform: translateX(100%);
+}
+#mobile-menu:not(.translate-x-full) {
+    transform: translateX(0);
+}
+
+/* Responsive Stat Boxes */
+@media (max-width: 768px) {
+    .stat-box {
+        padding-left: 12px;
+    }
+    .stat-box h3 {
+        font-size: 1.875rem !important; /* text-3xl */
+    }
+}
+
 /* --- XUÂN TÍN HTML LOGO --- */
 .xt-logo-container {
     display: flex;
