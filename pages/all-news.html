@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tất Cả Tin Tức | Xuân Tín Logistics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orange: { 500: '#e8af06' },
+                        blue: { 900: '#003399' },
+                        black: '#0f172a',
+                        white: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@800;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <script src="../js/loader.js" defer></script>
+</head>
+<body class="bg-white text-black">
+    <nav id="global-header" class="fixed top-0 left-0 w-full z-[1000]"></nav>
+
+    <header class="bg-blue-900 text-white py-24">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="heading-style text-5xl font-black mb-4">TRUNG TÂM TIN TỨC</h1>
+            <p class="text-orange-500 font-bold uppercase tracking-widest text-xs">Cập nhật xu hướng và thông báo mới nhất từ Xuân Tín</p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-24">
+        <div class="grid md:grid-cols-3 gap-10">
+            <!-- Article 1 -->
+            <a href="article1.html" class="industrial-card bg-white block group shadow-lg">
+                <div class="relative overflow-hidden h-64">
+                    <img src="../pic/A.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="">
+                    <div class="absolute top-4 left-4 bg-orange-500 text-white px-4 py-1 text-[10px] font-black uppercase">Thông báo</div>
+                </div>
+                <div class="p-8">
+                    <p class="text-[10px] font-bold text-black/40 mb-3">05 THÁNG 05, 2026</p>
+                    <h4 class="font-black text-blue-900 text-lg uppercase leading-tight group-hover:text-orange-500 transition-colors mb-4">Khai trương điểm giao nhận mới tại Gò Dầu</h4>
+                    <p class="text-sm text-black/60 line-clamp-3 italic">Mở rộng mạng lưới phục vụ tuyến TP.HCM - Tây Ninh nhanh chóng hơn...</p>
+                </div>
+            </a>
+
+            <!-- Article 2 -->
+            <a href="article2.html" class="industrial-card bg-white block group shadow-lg">
+                <div class="relative overflow-hidden h-64">
+                    <img src="../pic/B.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="">
+                    <div class="absolute top-4 left-4 bg-blue-900 text-white px-4 py-1 text-[10px] font-black uppercase">Cẩm nang</div>
+                </div>
+                <div class="p-8">
+                    <p class="text-[10px] font-bold text-black/40 mb-3">02 THÁNG 05, 2026</p>
+                    <h4 class="font-black text-blue-900 text-lg uppercase leading-tight group-hover:text-orange-500 transition-colors mb-4">Cách đóng gói xe máy an toàn khi gửi liên tỉnh</h4>
+                    <p class="text-sm text-black/60 line-clamp-3 italic">Hệ thống bảo vệ 3 lớp giúp xe của bạn luôn an toàn trên mọi nẻo đường...</p>
+                </div>
+            </a>
+
+            <!-- Article 3 -->
+            <a href="article3.html" class="industrial-card bg-white block group shadow-lg">
+                <div class="relative overflow-hidden h-64">
+                    <img src="../pic/C.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="">
+                    <div class="absolute top-4 left-4 bg-orange-500 text-white px-4 py-1 text-[10px] font-black uppercase">Tin tức</div>
+                </div>
+                <div class="p-8">
+                    <p class="text-[10px] font-bold text-black/40 mb-3">28 THÁNG 04, 2026</p>
+                    <h4 class="font-black text-blue-900 text-lg uppercase leading-tight group-hover:text-orange-500 transition-colors mb-4">Tăng cường đội xe tải Hino mới công suất lớn</h4>
+                    <p class="text-sm text-black/60 line-clamp-3 italic">Rút ngắn thời gian giao hàng và nâng cao năng lực vận tải toàn diện...</p>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer id="global-footer"></footer>
+</body>
+</html>

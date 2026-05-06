@@ -1,0 +1,260 @@
+:root {
+    --primary-blue: #003399;
+    --accent-orange: #e8af06;
+    --white: #f8fafc;
+    --black: #0f172a;
+    --industrial-dark: #0f172a;
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: var(--primary-blue);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.loader-truck {
+    font-size: 5rem;
+    color: var(--white);
+    animation: truckDrive 1.5s infinite ease-in-out;
+}
+@keyframes truckDrive {
+    0% { transform: translateX(-30px); opacity: 0; }
+    50% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(30px); opacity: 0; }
+}
+.loader-bar {
+    width: 150px;
+    height: 3px;
+    background: rgba(255,255,255,0.2);
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.loader-progress {
+    height: 100%;
+    background: var(--accent-orange);
+    width: 0%;
+}
+
+/* Smooth Scroll Config */
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--black);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+.heading-style {
+    font-family: 'Barlow', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+/* Glassmorphism Navbar */
+nav { transition: background 0.4s ease, box-shadow 0.4s ease; }
+nav.scrolled {
+    background: var(--industrial-dark) !important;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Floating Contact Widget */
+.contact-widget {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.widget-item {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+.widget-item:hover { transform: scale(1.15) rotate(5deg); }
+.widget-item.phone { background: var(--accent-orange); }
+.widget-item.zalo { background: var(--primary-blue); }
+
+.pulse-ring {
+    position: absolute;
+    inset: -8px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    animation: pulse-ring 2s infinite;
+}
+@keyframes pulse-ring {
+    0% { transform: scale(0.7); opacity: 0.8; }
+    100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* Progress Bar */
+#progress {
+    position: fixed;
+    top: 0; left: 0; width: 0%; height: 5px;
+    background: var(--accent-orange);
+    z-index: 1001;
+}
+
+/* Back to Top */
+#scrollToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-blue);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+#scrollToTop.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+#scrollToTop:hover { background: var(--accent-orange); }
+
+.industrial-btn {
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 16px 36px;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s;
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+}
+.industrial-btn:hover { background: var(--accent-orange); padding-left: 45px; }
+
+.section-tag {
+    background: var(--accent-orange);
+    color: var(--white);
+    padding: 5px 15px;
+    font-weight: 800;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: inline-block;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+}
+
+.industrial-card {
+    border: 1px solid #e2e8f0;
+    background: var(--white);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+.industrial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    border-color: var(--primary-blue);
+}
+.industrial-card.hover-orange:hover {
+    border-color: #e8af06 !important;
+}
+
+/* --- XUÂN TÍN HTML LOGO --- */
+.xt-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+    width: 160px; /* Khống chế chiều rộng thực tế */
+    color: var(--white);
+    cursor: pointer;
+}
+
+.xt-brand-name {
+    font-size: 26px; /* Size nhỏ thực tế để không bị phantom space */
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: baseline;
+    line-height: 1;
+    font-family: 'Barlow', sans-serif;
+    white-space: nowrap;
+    color: var(--white);
+}
+
+.xt-accent-yellow { color: var(--accent-orange); }
+
+.xt-letter-a, .xt-letter-i {
+    position: relative;
+    display: inline-block;
+}
+
+.xt-hat {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+}
+
+.xt-slash {
+    position: absolute;
+    top: -5px;
+    right: -1px;
+    font-size: 25px;
+}
+
+.xt-slogan-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    width: 100%;
+    gap: 4px;
+}
+
+.xt-slogan-text {
+    font-size: 8.5px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    color: rgba(255,255,255,0.7);
+}
+
+.xt-line {
+    min-width: 40px;
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(to right, transparent, var(--accent-orange));
+}
+
+.xt-line.xt-right {
+    background: linear-gradient(to left, transparent, var(--accent-orange));
+}

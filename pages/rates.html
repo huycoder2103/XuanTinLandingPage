@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Giá Dịch Vụ | Xuân Tín Logistics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orange: { 400: '#e8af06', 500: '#e8af06', 600: '#e8af06' },
+                        blue: { 900: '#003399' },
+                        black: '#0f172a',
+                        white: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/rates.css">
+    <script src="../js/loader.js" defer></script>
+</head>
+<body class="bg-white text-black">
+
+    <nav id="global-header" class="fixed top-0 left-0 w-full z-[1000]"></nav>
+
+    <section id="rates" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-24 reveal-up">
+                <h2 class="heading-style text-3xl font-black text-blue-900 mb-2 uppercase">CÔNG TY TNHH VẬN TẢI XUÂN TÍN LOGISTICS</h2>
+                <h4 class="heading-style text-xl font-bold text-orange-500 mb-2">BẢNG GIÁ CƯỚC DỊCH VỤ GIAO NHẬN BƯU PHẨM TẠI VĂN PHÒNG</h4>
+                <p class="text-black italic text-sm ">(Đã bao gồm Thuế VAT, chưa tính phí thu hộ, đơn vị tính: VNĐ)</p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8">
+                <!-- Card 1: HÀNG THÔNG THƯỜNG -->
+                <div class="lg:col-span-8 reveal-up">
+                    <div class="industrial-card h-full flex flex-col shadow-lg">
+                        <div class="p-6 bg-blue-900 text-white flex justify-between items-center border-b border-white/10">
+                            <h4 class="font-black underline uppercase tracking-wider italic">HÀNG THÔNG THƯỜNG</h4>
+                            <i class="bi bi-box-seize text-xl"></i>
+                        </div>
+                        <div class="overflow-x-auto flex-grow">
+                            <table class="table-premium w-full">
+                                <thead>
+                                    <tr class="bg-white text-black">
+                                        <th class="text-left">Trọng lượng</th>
+                                        <th class="text-center">Dưới 100km</th>
+                                        <th class="text-center">100-150km</th>
+                                        <th class="text-center">Trên 150km</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Đến 1kg</td><td class="text-center font-black">15,000</td><td class="text-center font-black">15,000</td><td class="text-center italic font-bold">Báo giá</td></tr>
+                                    <tr><td>1kg – 5kg</td><td class="text-center font-black">20,000</td><td class="text-center font-black">25,000</td><td class="text-center italic font-bold">Báo giá</td></tr>
+                                    <tr><td>5kg – 10kg</td><td class="text-center font-black">25,000</td><td class="text-center font-black">30,000</td><td class="text-center italic font-bold">Báo giá</td></tr>
+                                    <tr><td>10kg – 15kg</td><td class="text-center font-black">30,000</td><td class="text-center font-black">35,000</td><td class="text-center italic font-bold">Báo giá</td></tr>
+                                    <tr><td>15kg – 20kg</td><td class="text-center font-black">35,000</td><td class="text-center font-black">40,000</td><td class="text-center italic font-bold">Báo giá</td></tr>
+                                    <tr><td>20kg – 25kg</td><td class="text-center font-black">40,000</td><td class="text-center font-black">45,000</td><td class="text-center italic font-bold">Báo giá</td></tr>
+                                    <tr><td>25kg – 50kg</td><td class="text-center font-black text-blue-900">x 2,000</td><td class="text-center font-black text-blue-900">x 2,200</td><td class="text-center italic font-bold">Báo giá</td></tr>
+                                    <tr class="bg-blue-900 text-white font-black"><td colspan="2" class="p-6">HÀNG QUÁ TẢI (>50KG)</td><td colspan="2" class="text-center">Hệ số P (1.2 - 1.25)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: COD -->
+                <div class="lg:col-span-4 reveal-up">
+                    <div class="industrial-card bg-white h-full flex flex-col shadow-lg">
+                        <div class="p-6 bg-blue-900 text-white flex justify-between items-center border-b border-white/10">
+                            <h4 class="font-black underline uppercase tracking-wider italic">THU HỘ (COD)</h4>
+                            <i class="bi bi-currency-dollar text-xl"></i>
+                        </div>
+                        <table class="table-premium w-full flex-grow">
+                            <thead>
+                                <tr class="bg-white text-black">
+                                    <th class="text-left text-xs">Giá trị hàng</th>
+                                    <th class="text-center text-xs">Phí thu hộ</th>
+                                    <th class="text-center text-xs">Ghi chú</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Dưới 2tr</td><td class="text-center font-black">15,000</td><td class="text-center">-</td></tr>
+                                <tr><td>Từ 2 - 5tr</td><td class="text-center font-black">25,000</td><td class="text-center">-</td></tr>
+                                <tr><td>Từ 5 - 9tr</td><td class="text-center font-black">35,000</td><td class="text-center">-</td></tr>
+                                <tr><td>Từ 9 - 50tr</td><td class="text-center font-black text-blue-900">0.7%</td><td class="text-center">-</td></tr>
+                                <tr><td>Từ trên 50tr</td><td class="text-center font-black text-blue-900">0.5%</td><td class="text-center">-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Card 3: HÀNG QUY CHUẨN -->
+                <div class="lg:col-span-12 reveal-up">
+                    <div class="industrial-card bg-white shadow-lg">
+                        <div class="p-6 bg-blue-900 text-white flex justify-between items-center border-b border-white/10">
+                            <h4 class="font-black underline uppercase tracking-wider italic">HÀNG QUY CHUẨN CHI TIẾT</h4>
+                            <span class="text-xs font-black bg-white text-blue-900 px-4 py-1 border border-gray-200 rounded">BÁO GIÁ PHÂN LOẠI</span>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="table-premium text-xs w-full">
+                                <thead>
+                                    <tr class="bg-white text-black font-bold"><th>Loại mặt hàng</th><th class="text-center">Dưới 100km</th><th class="text-center">100-150km</th><th class="text-center">Trên 150km</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Xe đạp mini</td><td class="text-center font-black">50,000</td><td class="text-center font-black">60,000</td><td class="text-center italic font-bold">Báo giá</td></tr>
+                                    <tr><td>Xe đạp lớn</td><td class="text-center font-black">90,000</td><td class="text-center font-black">100,000</td><td class="text-center italic font-bold">Báo giá</td></tr>
+                                    <tr><td>Xe đạp điện (có bàn đạp)</td><td class="text-center font-black">140,000</td><td class="text-center font-black">160,000</td><td class="text-center italic font-bold">Báo giá</td></tr>
+                                    <tr><td class="font-black">Xe gắn máy thường, xe điện thường</td><td class="text-center font-black">210,000</td><td class="text-center font-black">240,000</td><td class="text-center italic font-bold">Báo giá</td></tr>
+                                    <tr><td class="font-black">Xe tay ga thường / Xe côn tay (<150cc)</td><td class="text-center font-black">260,000</td><td class="text-center font-black">280,000</td><td class="text-center italic font-bold">Báo giá</td></tr>
+                                    <tr><td class="font-black">SH, Vespa, PCX, Dylan…(<175cc)</td><td class="text-center font-black">350,000</td><td class="text-center font-black">370,000</td><td class="text-center italic font-bold">Báo giá</td></tr>
+                                    <tr><td class="font-black">Moto PKL / Moto cao cấp (<250cc)</td><td class="text-center font-black">550,000</td><td class="text-center font-black">600,000</td><td class="text-center italic font-bold">Báo giá</td></tr>
+                                    <tr><td>Bộ máy may 2 món</td><td class="text-center font-black">120,000</td><td class="text-center font-black">130,000</td><td class="text-center italic font-bold">Báo giá</td></tr>
+                                    <tr><td>Bộ máy lạnh 2 món (1HP - 2.5HP)</td><td colspan="2" class="text-center italic font-bold">Từ 80,000 đến 180,000 VNĐ</td><td class="text-center italic font-bold">Báo giá</td></tr>
+                                    <tr><td>Tivi (41 - 60+ inch)</td><td colspan="2" class="text-center italic font-bold">Từ 80,000 đến 230,000 VNĐ</td><td class="text-center italic font-bold">Báo giá</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: KHUYẾN MÃI -->
+                <div class="lg:col-span-5 reveal-left">
+                    <div class="industrial-card hover-orange bg-orange-500 text-white p-10 h-full relative overflow-hidden shadow-lg">
+                        <i class="bi bi-truck absolute -right-6 -bottom-6 text-9xl opacity-10 -rotate-12"></i>
+                        <h4 class="heading-style text-3xl font-black mb-8 leading-tight">GỬI CÀNG NHIỀU<br>GIẢM CÀNG SÂU</h4>
+                        <div class="space-y-6 relative z-10">
+                            <div class="bg-white/20 p-5 border-l-4 border-white">
+                                <p class="text-xs uppercase font-black mb-1">Lô từ 5 - 10 kiện</p>
+                                <p class="text-3xl font-black italic">GIẢM 20,000đ</p>
+                            </div>
+                            <div class="bg-white/20 p-5 border-l-4 border-white">
+                                <p class="text-xs uppercase font-black mb-1">Lô từ 10 - 20 kiện</p>
+                                <p class="text-3xl font-black italic">GIẢM 50,000đ</p>
+                            </div>
+                            <p class="text-sm font-black italic pt-4">Trên 20 kiện: Giá thỏa thuận</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: GHI CHÚ & CỒNG KỀNH -->
+                <div class="lg:col-span-7 reveal-right">
+                    <div class="bg-blue-900 text-white p-10 industrial-card h-full shadow-lg">
+                        <p class="font-black underline mb-8 uppercase tracking-widest text-orange-500">Quy định cồng kềnh & Ghi chú</p>
+                        <div class="grid md:grid-cols-2 gap-10">
+                            <div class="space-y-4 text-sm text-white">
+                                <p>1. <span class="font-black uppercase">Hệ số P:</span> P = 1.2, P1 = 1.25.</p>
+                                <p>2. <span class="font-black uppercase">Cồng kềnh:</span> Hàng có 1 chiều > 90cm hoặc < 10cm.</p>
+                                <p>3. <span class="font-black uppercase">Làm tròn:</span> Cước lẻ làm tròn lên đơn vị 1,000đ.</p>
+                            </div>
+                            <div class="bg-white/10 p-6 border border-white/20 rounded shadow-inner">
+                                <p class="text-[10px] font-black uppercase mb-4 tracking-widest text-orange-500">Công thức quy đổi</p>
+                                <p class="font-mono text-xs leading-loose italic text-white/90">Dài x Rộng x Cao / (1000 | 2000 | 5000) <br>= Trọng lượng (Kg) x Hệ Số P</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="global-footer"></footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        const lenis = new Lenis();
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+
+        [ {s:".reveal-up",y:60}, {s:".reveal-left",x:-60}, {s:".reveal-right",x:60} ].forEach(rev => {
+            gsap.utils.toArray(rev.s).forEach(el => {
+                gsap.from(el, { opacity: 0, x: rev.x||0, y: rev.y||0, duration: 1, ease: "power2.out", scrollTrigger: { trigger: el, start: "top 90%" } });
+            });
+        });
+    </script>
+</body>
+</html>
