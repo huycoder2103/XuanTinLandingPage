@@ -1,13 +1,13 @@
 .table-premium {
     width: 100%;
     border-collapse: collapse;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 .table-premium th, .table-premium td {
     padding: 16px 20px;
     text-align: left;
     vertical-align: middle;
     border-bottom: 1px solid #f3f4f6;
+    white-space: nowrap;
 }
 .table-premium th {
     background: var(--white);
@@ -20,6 +20,22 @@
 .table-premium td { 
     font-size: 0.9rem; 
 }
+
+@media (max-width: 768px) {
+    .table-premium th, .table-premium td {
+        padding: 8px 6px;
+        font-size: 0.65rem;
+        white-space: normal; /* Cho phép xuống hàng để vừa màn hình */
+        word-break: break-word;
+    }
+    .table-premium th {
+        font-size: 0.6rem;
+    }
+    .table-premium td {
+        font-size: 0.7rem;
+    }
+}
+
 .table-premium tr:hover td { 
     background: rgba(0, 51, 153, 0.03);
 }

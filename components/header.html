@@ -1,4 +1,4 @@
-<div style="background-color: rgba(15, 23, 42, 0.9);" class="backdrop-blur-md border-b border-white/10">
+<div style="background-color: rgba(15, 23, 42, 0.95);" class="backdrop-blur-md border-b border-white/10 relative">
     <div class="max-w-7xl mx-auto px-6 flex justify-between h-16 items-center">
         <a href="index.html" class="link-home">
             <div class="xt-logo-container">
@@ -23,21 +23,20 @@
             <a href="index.html#contact" class="bg-orange-500 text-white px-5 py-2 rounded-sm hover:bg-white hover:text-blue-900 transition-all link-home">Liên hệ</a>
         </div>
 
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden text-white text-2xl">
-            <i class="bi bi-list"></i>
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="block md:hidden text-white p-2 focus:outline-none" aria-label="Toggle Menu">
+            <i class="bi bi-list text-2xl"></i>
         </button>
     </div>
-</div>
 
-<!-- Mobile Menu Drawer -->
-<div id="mobile-menu" class="fixed inset-0 bg-blue-900 z-[2000] flex flex-col items-center justify-center space-y-8 transform translate-x-full transition-transform duration-500 md:hidden">
-    <button id="mobile-menu-close" class="absolute top-6 right-6 text-white text-4xl">
-        <i class="bi bi-x"></i>
-    </button>
-    <a href="index.html#about" class="text-2xl font-black text-white uppercase tracking-tighter hover:text-orange-500 link-home">Về chúng tôi</a>
-    <a href="index.html#network" class="text-2xl font-black text-white uppercase tracking-tighter hover:text-orange-500 link-home">Mạng lưới</a>
-    <a href="pages/all-news.html" class="text-2xl font-black text-white uppercase tracking-tighter hover:text-orange-500 link-news">Tin tức</a>
-    <a href="pages/rates.html" class="text-2xl font-black text-white uppercase tracking-tighter hover:text-orange-500 link-rates">Báo giá</a>
-    <a href="index.html#contact" class="text-2xl font-black text-orange-500 uppercase tracking-tighter link-home">Liên hệ ngay</a>
+    <!-- Compact Dropdown Menu -->
+    <div id="mobile-menu" class="hidden absolute top-full right-6 w-48 bg-[#0f172a] border border-white/10 rounded-lg shadow-2xl overflow-hidden z-[2001] transform origin-top-right transition-all duration-200 scale-95 opacity-0">
+        <div class="flex flex-col py-2">
+            <a href="index.html#about" class="px-6 py-3 text-[10px] font-black text-white uppercase tracking-wider hover:bg-white/5 hover:text-orange-500 transition-colors link-home border-b border-white/5">Về chúng tôi</a>
+            <a href="index.html#network" class="px-6 py-3 text-[10px] font-black text-white uppercase tracking-wider hover:bg-white/5 hover:text-orange-500 transition-colors link-home border-b border-white/5">Mạng lưới</a>
+            <a href="pages/all-news.html" class="px-6 py-3 text-[10px] font-black text-white uppercase tracking-wider hover:bg-white/5 hover:text-orange-500 transition-colors link-news border-b border-white/5">Tin tức</a>
+            <a href="pages/rates.html" class="px-6 py-3 text-[10px] font-black text-white uppercase tracking-wider hover:bg-white/5 hover:text-orange-500 transition-colors link-rates border-b border-white/5">Báo giá</a>
+            <a href="index.html#contact" class="px-6 py-4 text-[10px] font-black text-orange-500 uppercase tracking-widest hover:bg-white/5 link-home italic">Liên hệ ngay</a>
+        </div>
+    </div>
 </div>
