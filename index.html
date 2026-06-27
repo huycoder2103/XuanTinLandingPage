@@ -152,6 +152,55 @@
         <div class="swiper-pagination"></div>
     </div>
 
+    <!-- Tracking -->
+    <section id="tracking" class="bg-orange-500 py-10 md:py-14">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
+                <div class="text-center lg:text-left lg:flex-shrink-0">
+                    <div class="flex items-center justify-center lg:justify-start gap-3 mb-1">
+                        <i class="bi bi-geo-alt-fill text-white text-2xl"></i>
+                        <h3 class="heading-style text-2xl md:text-3xl font-black text-white">TRA CỨU VẬN ĐƠN</h3>
+                    </div>
+                    <p class="text-white/80 text-xs md:text-sm">Nhập mã vận đơn để theo dõi hành trình đơn hàng của bạn.</p>
+                </div>
+                <div class="flex w-full gap-3">
+                    <input id="track-input" type="text" autocomplete="off" placeholder="Nhập mã vận đơn..."
+                        class="flex-1 min-w-0 px-5 py-4 rounded-sm text-blue-900 font-bold placeholder:text-blue-900/40 focus:outline-none focus:ring-2 focus:ring-blue-900 transition-shadow">
+                    <button id="track-btn" type="button"
+                        class="bg-blue-900 text-white px-6 md:px-8 py-4 font-black uppercase text-xs md:text-sm tracking-widest hover:bg-black transition-all whitespace-nowrap flex items-center gap-2">
+                        <i class="bi bi-search"></i> <span class="hidden sm:inline">Tra cứu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracking -->
+    <section id="tracking" class="py-12 md:py-16 bg-blue-900 text-white relative overflow-hidden">
+        <i class="bi bi-search absolute -right-8 -bottom-12 text-[14rem] opacity-5"></i>
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-6 md:gap-10">
+                <div class="lg:flex-shrink-0 lg:max-w-xs">
+                    <div class="section-tag">Tra cứu</div>
+                    <h2 class="heading-style text-2xl md:text-3xl font-black leading-tight text-white">THEO DÕI ĐƠN HÀNG</h2>
+                    <p class="text-white/60 text-xs md:text-sm mt-2">Nhập mã đơn (vd: <span class="text-orange-500 font-bold">ORD-000012</span>) để xem trạng thái.</p>
+                </div>
+                <form id="track-form" class="flex-1 flex flex-col sm:flex-row gap-3 w-full" novalidate>
+                    <div class="flex-1 relative">
+                        <i class="bi bi-box-seam absolute left-4 top-1/2 -translate-y-1/2 text-white/50 text-lg"></i>
+                        <input id="track-input" name="orderId" type="text" inputmode="text" autocomplete="off" spellcheck="false"
+                            placeholder="Mã đơn, vd: ORD-000012"
+                            class="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 text-white placeholder-white/40 font-bold tracking-wider uppercase focus:outline-none focus:border-orange-500 focus:bg-white/15 transition-colors">
+                    </div>
+                    <button type="submit" class="industrial-btn text-base text-white justify-center sm:justify-start whitespace-nowrap">
+                        TRA CỨU <i class="bi bi-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+            <p id="track-error" class="text-orange-500 text-xs font-bold mt-3 hidden"><i class="bi bi-exclamation-triangle-fill"></i> <span></span></p>
+        </div>
+    </section>
+
     <!-- About -->
     <section id="about" class="py-20 md:py-32 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
@@ -168,7 +217,7 @@
                         <div><p class="text-[8px] md:text-[10px] font-black uppercase text-orange-500 tracking-widest mb-1">Tên pháp lý</p><p class="font-black text-blue-900 uppercase text-base md:text-lg leading-tight">CÔNG TY TNHH MỘT THÀNH VIÊN THƯƠNG MẠI VÀ DỊCH VỤ VẬN TẢI XUÂN TÍN LOGISTICS</p></div>
                         <div class="grid grid-cols-2 gap-4 md:gap-8">
                             <div><p class="text-[8px] md:text-[10px] font-black uppercase text-orange-500 tracking-widest mb-1">Người đại diện</p><p class="font-bold text-black text-xs md:text-base">Ông Nguyễn Thanh Xuân</p><p class="text-[10px] md:text-xs text-black/60 italic">Giám đốc</p></div>
-                            <div><p class="text-[8px] md:text-[10px] font-black uppercase text-orange-500 tracking-widest mb-1">Vốn điều lệ</p><p class="font-bold text-black text-xs md:text-base">150.000.000 đ</p></div>
+                            
                         </div>
                         <div class="grid grid-cols-2 gap-4 md:gap-8">
                             <div><p class="text-[8px] md:text-[10px] font-black uppercase text-orange-500 tracking-widest mb-1">Lĩnh vực</p><p class="font-bold text-black uppercase text-xs md:text-base">Vận tải & Logistics</p></div>
@@ -406,11 +455,59 @@
             }
         });
 
+        (function initTracking() {
+            const form = document.getElementById('track-form');
+            const input = document.getElementById('track-input');
+            const errBox = document.getElementById('track-error');
+            if (!form || !input || !errBox) return;
+            const errMsg = errBox.querySelector('span');
+            const showError = (msg) => { errMsg.textContent = msg; errBox.classList.remove('hidden'); };
+            const clearError = () => errBox.classList.add('hidden');
+            input.addEventListener('input', clearError);
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const raw = (input.value || '').trim();
+                if (!raw) { showError('Vui lòng nhập mã đơn.'); return; }
+                // Strip everything except letters/digits, uppercase, then remove leading ORD
+                const cleaned = raw.toUpperCase().replace(/[^A-Z0-9]/g, '');
+                const digits = cleaned.replace(/^ORD/, '');
+                if (!/^\d+$/.test(digits)) {
+                    showError('Mã đơn không hợp lệ. Định dạng đúng: ORD-000012.');
+                    return;
+                }
+                clearError();
+                const orderId = 'ORD-' + digits;
+                window.open('https://deliverysystem.cloud/Order/Tracking/' + orderId, '_blank', 'noopener');
+            });
+        })();
+
         [ {s:".reveal-up",y:14}, {s:".reveal-left",x:-14}, {s:".reveal-right",x:14} ].forEach(rev => {
             gsap.utils.toArray(rev.s).forEach(el => {
                 gsap.from(el, { opacity: 0, x: rev.x||0, y: rev.y||0, duration: 0.4, ease: "power1.out", scrollTrigger: { trigger: el, start: "top 92%" } });
             });
         });
+
+        // === TRA CỨU VẬN ĐƠN ===
+        // ⚙️ CẤU HÌNH: dán link tra cứu của bạn vào đây. Dùng {id} làm vị trí chèn mã vận đơn.
+        //   - Dạng query:  "https://tracking.cua-ban.com/?code={id}"
+        //   - Dạng path:   "https://tracking.cua-ban.com/don/{id}"
+        const TRACKING_URL = "https://vantaixuantin.com/tracking?id={id}";
+        function goTrack() {
+            const el = document.getElementById('track-input');
+            if (!el) return;
+            const id = el.value.trim();
+            if (!id) { el.focus(); el.classList.add('ring-2', 'ring-blue-900'); return; }
+            const url = TRACKING_URL.includes('{id}')
+                ? TRACKING_URL.replace('{id}', encodeURIComponent(id))
+                : TRACKING_URL + encodeURIComponent(id);
+            window.open(url, '_blank', 'noopener');
+        }
+        (function () {
+            const el = document.getElementById('track-input');
+            const btn = document.getElementById('track-btn');
+            if (btn) btn.addEventListener('click', goTrack);
+            if (el) el.addEventListener('keydown', function (e) { if (e.key === 'Enter') goTrack(); });
+        })();
     </script>
 </body>
 </html>
