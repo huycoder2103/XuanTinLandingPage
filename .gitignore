@@ -1,0 +1,16 @@
+# Private company documents (chứa thông tin pháp lý/cá nhân — KHÔNG đưa lên public repo)
+document-xuantin/
+
+# IDE / editor caches
+.vs/
+.vscode/
+.idea/
+
+# Claude Code local dev config (preview server, đường dẫn máy cá nhân)
+.claude/
+
+# OS junk
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
