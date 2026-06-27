@@ -25,10 +25,35 @@
             <a href="index.html#contact" class="bg-orange-500 text-white px-5 py-2 rounded-sm hover:bg-white hover:text-blue-900 transition-all link-home">Liên hệ</a>
         </div>
 
-        <!-- Mobile Menu Toggle -->
-        <button id="mobile-menu-btn" class="block md:hidden text-white p-2 focus:outline-none" aria-label="Toggle Menu">
-            <i class="bi bi-list text-2xl"></i>
-        </button>
+        <!-- Tracking Search Button -->
+        <div class="relative flex items-center gap-2">
+            <button id="nav-track-btn" class="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-orange-500 transition-colors" aria-label="Tra cứu vận đơn">
+                <i class="bi bi-search text-sm"></i>
+            </button>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="block md:hidden text-white p-2 focus:outline-none" aria-label="Toggle Menu">
+                <i class="bi bi-list text-2xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Tracking Dropdown -->
+    <div id="nav-track-dropdown" class="hidden absolute top-full left-0 right-0 bg-blue-900 border-t border-white/10 shadow-2xl z-[2002] transform transition-all duration-200 opacity-0 -translate-y-2">
+        <div class="max-w-3xl mx-auto px-6 py-5">
+            <form id="nav-track-form" class="flex gap-3" novalidate>
+                <div class="flex-1 relative">
+                    <i class="bi bi-box-seam absolute left-4 top-1/2 -translate-y-1/2 text-white/40 text-base"></i>
+                    <input id="nav-track-input" name="orderId" type="text" inputmode="text" autocomplete="off" spellcheck="false"
+                        placeholder="Nhập mã vận đơn, vd: ORD-000012"
+                        class="w-full pl-11 pr-4 py-3 bg-white/10 border border-white/20 text-white text-sm placeholder-white/40 font-bold tracking-wider uppercase focus:outline-none focus:border-orange-500 focus:bg-white/15 transition-colors">
+                </div>
+                <button type="submit" class="bg-orange-500 text-white px-6 py-3 font-black uppercase text-xs tracking-widest hover:bg-orange-600 transition-colors whitespace-nowrap flex items-center gap-2" style="clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);">
+                    <i class="bi bi-search"></i> Tra cứu
+                </button>
+            </form>
+            <p id="nav-track-error" class="text-orange-500 text-xs font-bold mt-2 hidden"><i class="bi bi-exclamation-triangle-fill"></i> <span></span></p>
+        </div>
     </div>
 
     <!-- Compact Dropdown Menu -->
