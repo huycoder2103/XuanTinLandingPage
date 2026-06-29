@@ -25,20 +25,18 @@
             <a href="index.html#contact" class="bg-orange-500 text-white px-5 py-2 rounded-sm hover:bg-white hover:text-blue-900 transition-all link-home">Liên hệ</a>
         </div>
 
-        <!-- Tracking Search Button -->
-        <div class="relative flex items-center gap-2">
-            <button id="nav-track-btn" class="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-orange-500 transition-colors" aria-label="Tra cứu vận đơn">
-                <i class="bi bi-search text-sm"></i>
-            </button>
-
-            <!-- Mobile Menu Toggle -->
-            <button id="mobile-menu-btn" class="block md:hidden text-white p-2 focus:outline-none" aria-label="Toggle Menu">
-                <i class="bi bi-list text-2xl"></i>
-            </button>
-        </div>
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="block md:hidden text-white p-2 focus:outline-none" aria-label="Toggle Menu">
+            <i class="bi bi-list text-2xl"></i>
+        </button>
     </div>
 
-    <!-- Tracking Dropdown -->
+    <!-- TRACKING NAVBAR (tam an, cho hoan thien)
+    <div class="relative flex items-center gap-2">
+        <button id="nav-track-btn" class="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-orange-500 transition-colors" aria-label="Tra cứu vận đơn">
+            <i class="bi bi-search text-sm"></i>
+        </button>
+    </div>
     <div id="nav-track-dropdown" class="hidden absolute top-full left-0 right-0 bg-blue-900 border-t border-white/10 shadow-2xl z-[2002] transform transition-all duration-200 opacity-0 -translate-y-2">
         <div class="max-w-3xl mx-auto px-6 py-5">
             <form id="nav-track-form" class="flex gap-3" novalidate>
@@ -55,6 +53,7 @@
             <p id="nav-track-error" class="text-orange-500 text-xs font-bold mt-2 hidden"><i class="bi bi-exclamation-triangle-fill"></i> <span></span></p>
         </div>
     </div>
+    HET TRACKING NAVBAR -->
 
     <!-- Compact Dropdown Menu -->
     <div id="mobile-menu" class="hidden absolute top-full right-6 w-48 bg-[#0f172a] border border-white/10 rounded-lg shadow-2xl overflow-hidden z-[2001] transform origin-top-right transition-all duration-200 scale-95 opacity-0">
