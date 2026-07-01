@@ -8,6 +8,7 @@ document-xuantin/
 
 # Claude Code local dev config (preview server, đường dẫn máy cá nhân)
 .claude/
+.gemini/
 
 # OS junk
 Thumbs.db

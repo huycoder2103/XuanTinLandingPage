@@ -57,6 +57,7 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/index.css">
     <script src="js/loading.js"></script>
+    <script src="js/news.js"></script>
     <script src="js/loader.js" defer></script>
 </head>
 <body class="bg-white text-black">
@@ -326,31 +327,32 @@
         </div>
     </section>
 
-    <!-- NEWS SECTION (tam an)
+    <!-- News Section (dynamic from Google Sheets) -->
     <section id="news" class="py-20 md:py-32 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 reveal-up">
                 <div><div class="section-tag">Tin tức & Sự kiện</div><h2 class="heading-style text-3xl md:text-5xl font-black text-blue-900 leading-tight">TRUNG TÂM TIN TỨC</h2></div>
                 <a href="pages/all-news.html" class="text-orange-500 font-black uppercase text-[10px] md:text-xs tracking-widest border-b-2 border-orange-500 mt-4 md:mt-0">Xem tất cả bài viết <i class="bi bi-arrow-right"></i></a>
             </div>
-            <div class="grid lg:grid-cols-12 gap-8 md:gap-10">
-                <div class="lg:col-span-8 reveal-left">
-                    <a href="pages/article1.html" class="industrial-card bg-white block group h-full shadow-2xl">
-                        <div class="relative overflow-hidden h-48 md:h-[400px]">
-                            <img src="pic/A.jpg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Khai trương điểm giao nhận mới tại Gò Dầu" loading="lazy" decoding="async">
-                            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent"></div>
-                            <div class="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8"><h3 class="heading-style text-xl md:text-3xl font-black text-white mb-2 md:mb-4 group-hover:text-orange-500">KHAI TRƯƠNG ĐIỂM GIAO NHẬN MỚI TẠI GÒ DẦU</h3></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="lg:col-span-4 flex flex-col gap-4 md:gap-6 reveal-right">
-                    <a href="pages/article2.html" class="flex gap-4 md:gap-6 items-center p-4 bg-white border border-gray-100 rounded-xl hover:shadow-xl group transition-all"><img src="pic/B.jpg" class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 overflow-hidden rounded-lg object-cover" alt="Hướng dẫn đóng gói xe máy an toàn" loading="lazy" decoding="async"><h4 class="font-black text-blue-900 text-[10px] md:text-xs uppercase group-hover:text-orange-500">Cách đóng gói xe máy an toàn</h4></a>
-                    <a href="pages/article3.html" class="flex gap-4 md:gap-6 items-center p-4 bg-white border border-gray-100 rounded-xl hover:shadow-xl group transition-all"><img src="pic/C.jpg" class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 overflow-hidden rounded-lg object-cover" alt="Tăng cường đội xe tải Hino mới" loading="lazy" decoding="async"><h4 class="font-black text-blue-900 text-[10px] md:text-xs uppercase group-hover:text-orange-500">Tăng cường đội xe tải Hino mới</h4></a>
-                </div>
-            </div>
+            <div id="homepage-news"></div>
         </div>
     </section>
-    HET NEWS SECTION -->
+    <script>
+        (async function () {
+            try {
+                const articles = await fetchArticles();
+                const container = document.getElementById('homepage-news');
+                if (!articles.length) {
+                    document.getElementById('news').style.display = 'none';
+                    return;
+                }
+                container.innerHTML = renderHomepageNews(articles, '');
+            } catch (e) {
+                console.error('[News]', e);
+                document.getElementById('news').style.display = 'none';
+            }
+        })();
+    </script>
 
     <!-- CTA Banner -->
     <section class="relative bg-black overflow-hidden">
